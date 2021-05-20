@@ -8,6 +8,19 @@
         header('location: admin-login.php');
         exit;
     }
+
+    if (isset($_POST['unenroll_all_students'])) {
+        $query = "UPDATE students1 SET status='unenrolled' WHERE status='enrolled'";
+        $result = mysqli_query($connection, $query);
+
+        if ($result) {
+            echo '<script>alert("Students status updated successfully!");</script>';
+            $url="dashboard.php";
+            echo "<script>location.href='$url'</script>";
+        } else {
+            $msg="<div class='alert alert-danger text-center' role='alert'>Error</div>";
+        }
+    }
     
 
 ?>
@@ -147,7 +160,7 @@
 
             <div class="disable-all float-right">
                 <form action="dashboard.php" method="post">
-                    <button class="btn btn-danger"><i class="fas fa-times"></i> Unenroll All</button>
+                    <button type="submit" name="unenroll_all_students" class="btn btn-danger"><i class="fas fa-times"></i> Unenroll All</button>
                 </form>
             </div>
             <div class="table-responsive">
