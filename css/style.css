@@ -1,0 +1,48 @@
+* {
+    user-select: none;
+}
+
+body {
+    background: linear-gradient(#fff, #ddd) center/cover no-repeat;
+    height: 100vh;
+}
+
+form {
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 40px 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 20px -5px #000;
+}
+
+form img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form table tr td input[type="text"],
+form table tr td input[type="password"],
+form table tr td input[type="submit"] {
+    height: 45px;
+}
+
+form table tr td input[type="submit"] {
+    width: 100%;
+}
+
+form table tr td #remember_me,
+form table tr td label {
+    cursor: pointer;
+}
+
+.error {
+    color: #fff;
+    background: darkred;
+}
