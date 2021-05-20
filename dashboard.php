@@ -42,7 +42,6 @@
             <h3 class="text-light mt-3 ml-3">Baliwag Polytechnic College</h3>
         </div>
         <div class="logout d-flex float-right mt-3">
-            <a href="dashboard-edit.php" class="mr-3"><button class="btn btn-success">Edit</button></a>
             <a href="admin-change-password.php" class="mr-3"><button class="btn btn-success">Change Password</button></a>
             <form action="dashboard.php" method="POST">
                 <input type="submit" name="dashboardlogout" value="Logout" class="btn btn-danger">
@@ -205,6 +204,8 @@
                                         } else {
                                             //nothing
                                         }
+
+                                        echo "<a href='dashboard-edit.php?id={$row['id']}' class='mr-3'><button class='btn btn-success'>Edit Student Info</button></a>";
 
                                         ?>
                                     </td>
